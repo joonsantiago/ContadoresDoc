@@ -10,9 +10,15 @@ import org.jsoup.Jsoup;
 public class ContadoresDoc {
 
 	private String[] valores = new String[10];
-	private String[][] Allvalores = new String[4][10];
-        private boolean ativarTela = true;
-
+	private static String[][] Allvalores = new String[4][10];
+	private boolean ativarTela = true;
+	private String text = 
+			"\n\nA impressora não foi acessada, motivos possíves\n\n"
+            + "1- A impressora está desligada\n"
+            + "2- O endereço de IP foi alterado\n"
+            + "3- O cabo de rede está desconectado\n\n\n";;
+            
+            
 	public void Impressora24() {
 
 		Document doc;
@@ -25,21 +31,15 @@ public class ContadoresDoc {
 				i++;
 				if (i >= 25 && i <= 40) {
 					if (i % 2 == 0) {
-						getValores()[j] = link.text();
+						setValores(j,link.text());
 						//System.out.println("texto : (" + i + ","+j+") " +link.text());
 						j++;
 					}
 				}
 			}
-
-			for (int k = 0; k <= 7; k++) {System.out.println(valores[k]);}
+			//for (int k = 0; k <= 7; k++) {System.out.println(valores[k]);}
 
 		} catch (IOException f) {
-                    
-                    String text = "\n\nA impressora não foi acessada, motivos possíves\n\n"
-                            + "1- A impressora está desligada\n"
-                            + "2- O endereço de IP foi alterado\n"
-                            + "3- O cabo de rede está desconectado\n\n\n";		
                     JOptionPane.showMessageDialog(null, text);
                     setAtivarTela(false);
                     //f.printStackTrace();
@@ -62,33 +62,28 @@ public class ContadoresDoc {
 				int posF = pos+22;
 				dados = dados2;
 				
-				getValores()[i]=dados.substring(pos, posF);
+				setValores(i,dados.substring(pos, posF));
 				
 				pos = getValores()[i].indexOf("= ")+3;
 				posF = getValores()[i].indexOf(";")-1;
 				
-				getValores()[i] = getValores()[i].substring(pos, posF);
+				setValores(i, getValores()[i].substring(pos, posF));
 				
 				if(i==1){
 					pos = dados.indexOf("PaperSize[4]")+26;
 					posF = pos+22;
 					
-					getValores()[9]=dados.substring(pos, posF);
+					setValores(9, dados.substring(pos, posF));
 					
 					pos = getValores()[9].indexOf("= ")+3;
 					posF = getValores()[9].indexOf(";")-1;
 					
-					getValores()[9] = getValores()[9].substring(pos, posF);					
+					setValores(9, getValores()[9].substring(pos, posF));					
 				}
 			}
 			//for(int i=0;i<=9;i++){System.out.println("valor ("+i+") =" + valores[i]);}
 			
-		} catch (IOException f) {
-		
-                    String text = "\n\nA impressora não foi acessada, motivos possíves\n\n"
-                            + "1- A impressora está desligada\n"
-                            + "2- O endereço de IP foi alterado\n"
-                            + "3- O cabo de rede está desconectado\n\n\n";		
+		} catch (IOException f) {	
                     JOptionPane.showMessageDialog(null, text);
                     setAtivarTela(false);
                     //f.printStackTrace();
@@ -117,18 +112,13 @@ public class ContadoresDoc {
 
 				if (i >= 70 && i <= 79) {
 					n = i - 70;
-					getValores()[n] = dados.substring(pos, posF);
+					setValores(n, dados.substring(pos, posF));
 				}
 			}
 			 //for (int i = 0; i <= 9; i++) {System.out.println(valores[i]);}
 
 		} catch (IOException f) {
-		
-                    
-                    String text = "\n\nA impressora não foi acessada, motivos possíves\n\n"
-                            + "1- A impressora está desligada\n"
-                            + "2- O endereço de IP foi alterado\n"
-                            + "3- O cabo de rede está desconectado\n\n\n";		
+				
                     JOptionPane.showMessageDialog(null, text);
                     setAtivarTela(false);
                     //f.printStackTrace();
@@ -148,7 +138,7 @@ public class ContadoresDoc {
 				i++;
 				if (i >= 25 && i <= 40) {
 					if (i % 2 == 0) {
-						getAllvalores()[0][j]=link.text();
+						setAllvalores(0,j,link.text());
 						//valores[j] = link.text();
 						//System.out.println("texto : (" + i + ","+j+") " +link.text());
 						j++;
@@ -174,23 +164,23 @@ public class ContadoresDoc {
 				posF = pos+22;
 				dados = dados2;
 				
-				getValores()[i]=dados.substring(pos, posF);
+				setValores(i,dados.substring(pos, posF));
 				
 				pos = getValores()[i].indexOf("= ")+3;
 				posF = getValores()[i].indexOf(";")-1;
 				
-				getAllvalores()[1][i] = getValores()[i].substring(pos, posF);
+				setAllvalores(1,i, getValores()[i].substring(pos, posF));
 				
 				if(i==1){
 					pos = dados.indexOf("PaperSize[4]")+26;
 					posF = pos+22;
 					
-					getValores()[9]=dados.substring(pos, posF);
+					setValores(9,dados.substring(pos, posF));
 					
 					pos = getValores()[9].indexOf("= ")+3;
 					posF = getValores()[9].indexOf(";")-1;
 					
-					getAllvalores()[1][9] = getValores()[9].substring(pos, posF);					
+					setAllvalores(1,9, getValores()[9].substring(pos, posF));					
 				}
 			}
 			//for(int i=0;i<=9;i++){System.out.println("valor ("+i+") =" + valores[i]);}
@@ -213,7 +203,7 @@ public class ContadoresDoc {
 
 				if (i >= 70 && i <= 79) {
 					n = i - 70;
-					getAllvalores()[2][n] = dados.substring(pos, posF);
+					setAllvalores(2,n, dados.substring(pos, posF));
 				}
 			}
 			
@@ -234,7 +224,7 @@ public class ContadoresDoc {
 
 				if (i >= 70 && i <= 79) {
 					n = i - 70;
-					getAllvalores()[3][n] = dados.substring(pos, posF);
+					setAllvalores(3,n, dados.substring(pos, posF));
 				}
 			}
 			
@@ -245,13 +235,7 @@ public class ContadoresDoc {
 				}
 			}*/
 
-		} catch (IOException f) {
-			
-                    
-                    String text = "\n\nA impressora não foi acessada, motivos possíves\n\n"
-                            + "1- A impressora está desligada\n"
-                            + "2- O endereço de IP foi alterado\n"
-                            + "3- O cabo de rede está desconectado\n\n\n";		
+		} catch (IOException f) {	
                     JOptionPane.showMessageDialog(null, text);
                     setAtivarTela(false);
                     //f.printStackTrace();
@@ -264,6 +248,10 @@ public class ContadoresDoc {
      */
     public String[] getValores() {
         return valores;
+    }
+    
+    public void setValores(int i, String valor){
+    	this.valores[i] = valor;
     }
 
     /**
@@ -285,6 +273,10 @@ public class ContadoresDoc {
      */
     public void setAllvalores(String[][] Allvalores) {
         this.setAllvalores(Allvalores);
+    }
+    
+    public void setAllvalores(int linha, int coluna, String valor){
+    	this.Allvalores[linha][coluna] = valor; 
     }
 
     /**

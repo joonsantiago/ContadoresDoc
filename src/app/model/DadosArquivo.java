@@ -80,13 +80,12 @@ public class DadosArquivo {
         } catch (Exception e) {
         }            
         
-       /** for(String[] valoresAll1: valoresAll){
+       /**for(String[] valoresAll1: valoresAll){
             for(int m=0;m<44;m++){
                 System.out.print(valoresAll1[m]+" # ");
             }
             System.out.println();
-        }
-        * **/
+        }**/
         //for(int q = 0;q<=referencia.length;q++){System.out.println(referencia[q]);}
         return referencia;
     }

@@ -1,5 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change contadores template, choose Tools | Templates
  * and open the template in the editor.
  */
 package app.model;
@@ -12,17 +12,13 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import app.controlers.ImpDetalheAll;
-//import app.model.ContadoresDoc;
 import javax.swing.JOptionPane;
 
-public class EnvioEmail {
+public class EnvioEmail extends ContadoresDoc {
 
     public void EnviarEmail() {
         
-        ImpDetalheAll valores = new ImpDetalheAll();
-        //contadores.getAllvalores()
-        //String[][] valores = new ImpDetalheAll().contadores.getAllvalores();
+        //getAllvalores()
         
         String textoMSg = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
                 + "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
@@ -62,51 +58,51 @@ public class EnvioEmail {
                 + "  <tr bgcolor=\"#FFFFFF\">\n"
                 + "    <td width=\"82\" bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td width=\"159\" bgcolor=\"#EEEEEE\">Model Name</td>\n"
-                + "    <td width=\"238\" bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][0]
+                + "    <td width=\"238\" bgcolor=\"#EEEEEE\">"+getAllvalores()[0][0]
                 +"</td>\n"
                 + "    <td width=\"26\">&nbsp;</td>\n"
                 + "    <td width=\"159\" bgcolor=\"#EEEEEE\">Model Name</td>\n"
-                + "    <td width=\"237\" bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][0]
+                + "    <td width=\"237\" bgcolor=\"#EEEEEE\">"+getAllvalores()[2][0]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Serial Num</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][1]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[0][1]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Serial Num</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][4]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[2][4]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Firmware Version</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][2]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[0][2]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Firmware Version</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][5]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[2][5]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Sub Firware Version</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][3]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[0][3]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Sub Firware Version</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][6]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[2][6]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Memory Size</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][4]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[0][4]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Memory Size</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][7]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[2][7]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
@@ -118,21 +114,21 @@ public class EnvioEmail {
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Page Counter</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][6]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[0][6]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Page Counter</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][8]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[2][8]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Drum Count</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[0][7]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[0][7]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Drum Count</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[2][9]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[2][9]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
@@ -162,7 +158,7 @@ public class EnvioEmail {
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Model Name</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][0]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][0]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Model Name</td>\n"
@@ -171,41 +167,41 @@ public class EnvioEmail {
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Serial Num</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][4]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][4]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Total</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][0]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][0]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Firmware Version</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][5]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][5]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">A4</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][9]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][9]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Sub Firware Version</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][6]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][6]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">B5</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][1]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][1]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Memory Size</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][7]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][7]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">A5</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][2]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][2]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
@@ -213,27 +209,27 @@ public class EnvioEmail {
                 + "    <td colspan=\"2\" bgcolor=\"#EEEEEE\">****************************** Device Status    ******************************</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">F&oacute;lio</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][3]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][3]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Page Counter</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][8]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][8]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Legal EUA</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][4]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][4]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Drum Count</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[3][9]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[3][9]
                 +"</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Letter</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][5]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][5]
                 +"</td>\n"
                 + "  </tr>\n"
                 + "  <tr>\n"
@@ -242,7 +238,7 @@ public class EnvioEmail {
                 + "    <td bgcolor=\"#EEEEEE\">&nbsp;</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Statement</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][6]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][6]
                 +"</td>\n"
                 + "  </tr><tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
@@ -250,7 +246,7 @@ public class EnvioEmail {
                 + "    <td>&nbsp;</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Outra (Duplo)</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][7]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][7]
                 +"</td>\n"
                 + "  </tr><tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
@@ -258,7 +254,7 @@ public class EnvioEmail {
                 + "    <td>&nbsp;</td>\n"
                 + "    <td>&nbsp;</td>\n"
                 + "    <td bgcolor=\"#EEEEEE\">Outra (&Uacute;nico)</td>\n"
-                + "    <td bgcolor=\"#EEEEEE\">"+valores.contadores.getAllvalores()[1][8]
+                + "    <td bgcolor=\"#EEEEEE\">"+getAllvalores()[1][8]
                 +"</td>\n"
                 + "  </tr><tr>\n"
                 + "    <td bgcolor=\"#FFFFFF\">&nbsp;</td>\n"
@@ -320,12 +316,12 @@ public class EnvioEmail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("jonatas@documentall.com.br")); //Remetente
 
-            Address[] toUser = InternetAddress //Destinat√°rio(s)
-                    .parse("jonatas@documentall.com.br, remessa@documentall.com.br, asstecnica@infotech-df.com.br, marketing@infotech-df.com.br");
-            //"remessa@documentall.com.br, asstecnica@infotech-df.com.br, marketing@infotech-df.com.br"
+            Address[] toUser = InternetAddress //Destinat·rio(s)
+            		.parse("jonatas@documentall.com.br");
+            		//.PARSE("jonatas@documentall.com.br, remessa@documentall.com.br, asstecnica@infotech-df.com.br, marketing@infotech-df.com.br");
 
             message.setRecipients(Message.RecipientType.TO, toUser);
-            message.setSubject("Contadores de Impress√£o");//Assunto
+            message.setSubject("Contadores de Impress„o");//Assunto
             message.setContent(textoMSg, "text/html");
 
             Transport.send(message);

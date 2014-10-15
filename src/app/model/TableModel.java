@@ -82,7 +82,7 @@ public class TableModel extends AbstractTableModel {
     
     public void addReferencia(String[] referencia){
         dados = referencia;
-        ref.setMesRef(new DadosArquivo().LerArquivo());
+        ref.setMesRef(referencia);
         int ultimoIndice = getRowCount()-1;
         fireTableRowsInserted(ultimoIndice, ultimoIndice);
     }
