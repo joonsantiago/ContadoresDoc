@@ -16,7 +16,6 @@ public class ImpEmail implements ActionListener{
     EnvioEmail email = new EnvioEmail();
     
     public void actionPerformed(ActionEvent arg0) {
-        
         email.EnviarEmail();
     }    
     

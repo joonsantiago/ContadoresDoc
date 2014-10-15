@@ -12,6 +12,7 @@ public class DadosArquivo {
     String[][] valor = new String[4][11];
     String[][] valoresAll;
     String[] referencia;
+    File arquivo = new File("C:\\Users\\jonatas\\Desktop\\testeArq.txt");
 
     public int QuantidadeLinhas() {
         File arquivo = new File("C:\\Users\\jonatas\\Desktop\\testeArq.txt");
@@ -36,7 +37,6 @@ public class DadosArquivo {
 
     public String[] LerArquivo() {
 
-        File arquivo = new File("C:\\Users\\jonatas\\Desktop\\testeArq.txt");
         int i = 0, j = 0, k = 0, pos = 0, posF = 0;
         String linha2;
         referencia = new String[QuantidadeLinhas() / 4];
@@ -79,10 +79,10 @@ public class DadosArquivo {
 
         } catch (Exception e) {
         }            
-        
-       /**for(String[] valoresAll1: valoresAll){
+       /** 
+       for(String[] valoresAll1: valoresAll){
             for(int m=0;m<44;m++){
-                System.out.print(valoresAll1[m]+" # ");
+                System.out.print(valoresAll1[m]+" ## ");
             }
             System.out.println();
         }**/
@@ -90,5 +90,21 @@ public class DadosArquivo {
         return referencia;
     }
 
-    //public static void main(String[] args) {new DadosArquivo().LerArquivo();}
+    public void GravarArquivo(String dado, boolean novaLinha){
+    	try {
+    		FileWriter fw = new FileWriter(arquivo,true);
+        	BufferedWriter bw = new BufferedWriter(fw);
+        	
+        	bw.write(dado+"##");
+        	if(novaLinha == true ){
+        		bw.newLine();
+        	}
+        	bw.close();
+        	fw.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+    }
+    
+    public static void main(String[] args) {new DadosArquivo().LerArquivo();}
 }

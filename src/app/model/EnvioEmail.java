@@ -332,5 +332,22 @@ public class EnvioEmail extends ContadoresDoc {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+        
+        for(int i=0; i<4;i++){
+        	for(int j=0;j<9;j++){
+        		if(j==0){
+        			if(i==1){
+        				new DadosArquivo().GravarArquivo("000715092014",false);
+        				new DadosArquivo().GravarArquivo("Kyocera Command Center",false);
+        				new DadosArquivo().GravarArquivo(getAllvalores()[i][j],false);
+        			}else{
+        				new DadosArquivo().GravarArquivo("000715092014",false);
+        			}
+        		}else{
+        			new DadosArquivo().GravarArquivo(getAllvalores()[i][j],false);
+        		}
+        	}
+        	new DadosArquivo().GravarArquivo(getAllvalores()[i][9],true);
+        }
     }
 }

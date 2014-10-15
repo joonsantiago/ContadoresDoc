@@ -233,7 +233,7 @@ public class ContadoresDoc {
 				for (j = 0; j <=9; j++) {
 					System.out.println(Allvalores[i][j]+" ( "+i+","+j+") ");
 				}
-			}*/
+			}**/
 
 		} catch (IOException f) {	
                     JOptionPane.showMessageDialog(null, text);
@@ -241,7 +241,7 @@ public class ContadoresDoc {
                     //f.printStackTrace();
 		}		
 	}	
-	//public static void main(String[] args) {new ContadoresDoc().AllImpressoras();}
+	public static void main(String[] args) {new ContadoresDoc().AllImpressoras();}
 
     /**
      * @return the valores
