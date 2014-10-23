@@ -342,6 +342,7 @@ public class EnvioEmail extends ContadoresDoc {
         				new DadosArquivo().GravarArquivo(getAllvalores()[i][j],false);
         			}else{
         				new DadosArquivo().GravarArquivo("000715092014",false);
+        				new DadosArquivo().GravarArquivo(getAllvalores()[i][j],false);
         			}
         		}else{
         			new DadosArquivo().GravarArquivo(getAllvalores()[i][j],false);

@@ -241,7 +241,7 @@ public class ContadoresDoc {
                     //f.printStackTrace();
 		}		
 	}	
-	public static void main(String[] args) {new ContadoresDoc().AllImpressoras();}
+	//public static void main(String[] args) {new ContadoresDoc().AllImpressoras();}
 
     /**
      * @return the valores

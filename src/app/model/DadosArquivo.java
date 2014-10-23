@@ -106,5 +106,5 @@ public class DadosArquivo {
 		}
     }
     
-    public static void main(String[] args) {new DadosArquivo().LerArquivo();}
+    //public static void main(String[] args) {new DadosArquivo().LerArquivo();}
 }
