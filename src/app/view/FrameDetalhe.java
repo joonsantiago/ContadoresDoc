@@ -64,7 +64,6 @@ public class FrameDetalhe extends JFrame {
 		valor5.setBounds(190, 230, 100, 15);
 		valor6.setBounds(190, 290, 100, 15);
 		valor7.setBounds(190, 320, 100, 15);
-		
 	}
 
 }
