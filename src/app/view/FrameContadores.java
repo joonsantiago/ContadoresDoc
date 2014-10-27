@@ -3,7 +3,7 @@ package app.view;
 import javax.swing.*;
 import app.controlers.*;
 
-@SuppressWarnings("serial") 
+@SuppressWarnings("serial")
 public class FrameContadores extends JFrame {
 
 	JLabel lb_imp1, lb_imp2, lb_imp3, lb_imp4, lb_geral;
@@ -13,14 +13,14 @@ public class FrameContadores extends JFrame {
 	ImpDetalheBtn3 actionDetalheBtn3 = new ImpDetalheBtn3();
 	ImpDetalheBtn4 actionDetalheBtn4 = new ImpDetalheBtn4();
 	ImpDetalheAll actionDetalheAll = new ImpDetalheAll();
-	
+
 	public FrameContadores() {
 
 		setTitle("Contadores Impressora");
 		setSize(550, 400);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(false);
-                setLocationRelativeTo(null);
+		setLocationRelativeTo(null);
 
 		lb_imp1 = new JLabel("Impressora   //192.168.32.28   ~   DCP 8085DN");
 		lb_imp2 = new JLabel("Impressora   //192.168.32.24   ~   HL- 5350DN");
@@ -68,5 +68,6 @@ public class FrameContadores extends JFrame {
 
 	}
 
-	//public static void main(String[] args) {FrameContadores saida = new FrameContadores();saida.setVisible(true);
+	// public static void main(String[] args) {FrameContadores saida = new
+	// FrameContadores();saida.setVisible(true);
 }
